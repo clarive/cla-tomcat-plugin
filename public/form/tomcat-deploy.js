@@ -1,7 +1,7 @@
 (function(params) {
 
     var server = Cla.ui.ciCombo({
-        name: 'server',
+        name: 'instance',
         class: 'TomcatInstance',
         fieldLabel: _('Instance'),
         value: params.data.instance || '',
