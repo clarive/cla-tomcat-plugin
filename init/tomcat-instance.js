@@ -2,8 +2,8 @@ var ci = require("cla/ci");
 
 ci.createRole("Tomcat");
 
-ci.createClass("TomcatServer", {
-    form: '/plugin/cla-tomcat-plugin/form/tomcat-server.js',
+ci.createClass("TomcatInstance", {
+    form: '/plugin/cla-tomcat-plugin/form/tomcat-instance.js',
     icon: '/plugin/cla-tomcat-plugin/icon/tomcat.svg',
     roles: ["Tomcat"],
     has: {
