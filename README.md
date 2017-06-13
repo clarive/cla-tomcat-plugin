@@ -15,7 +15,7 @@ instance.
 
 After restarting your Clarive's instance, you will have a new CI:
 
-### TomcatServer:
+### TomcatInstance:
 
 This CI is to save your Tomcat Server parameters:
 

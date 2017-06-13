@@ -16,18 +16,18 @@ reg.register('service.tomcat.deploy', {
         var timeout = config.timeout || 10;
         var message = '';
 
-        var tomcatServer = ci.findOne({
-            mid: config.server + ''
+        var tomcatInstance = ci.findOne({
+            mid: config.instance + ''
         });
 
-        if (!tomcatServer){
+        if (!tomcatInstance){
             log.fatal("Server CI doesn't exist");
         }
 
-        var BASE_URL = tomcatServer.url ;
+        var BASE_URL = tomcatInstance.url ;
 
-        if ( tomcatServer.port ) {
-            BASE_URL += ':' + tomcatServer.port;
+        if ( tomcatInstance.port ) {
+            BASE_URL += ':' + tomcatInstance.port;
         }
 
         var deployUrl = BASE_URL + "/manager/text/deploy?";
@@ -38,8 +38,8 @@ reg.register('service.tomcat.deploy', {
 
         var agent = web.agent({
             auto_parse: 1,
-            username: tomcatServer.userName,
-            password: tomcatServer.password,
+            username: tomcatInstance.userName,
+            password: tomcatInstance.password,
         });
 
         var executeDeploy = agent.get(
