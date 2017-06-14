@@ -7,10 +7,12 @@ reg.register('service.tomcat.deploy', {
 
     handler: function(ctx, config) {
 
+        var regRemote = require("cla/reg");
         var ci = require("cla/ci");
         var log = require('cla/log');
         var web = require("cla/web");
         var util = require("cla/util");
+        var path = require("cla/path");
 
         var update = config.update == '1' ? 'true' : 'false';
         var timeout = config.timeout || 10;
@@ -24,6 +26,38 @@ reg.register('service.tomcat.deploy', {
             log.fatal("Server CI doesn't exist");
         }
 
+        var serverMid = tomcatInstance.server;
+
+        var server = ci.findOne({
+            mid: serverMid + ''
+        });
+log.warn(server);
+        var remotePath = server.remote_temp || "/tmp";
+
+        var remoteWarPath = path.join(remotePath, path.basename(config.warPath));
+
+        regRemote.launch('service.fileman.ship', {
+            name: 'Send WAR file',
+            config: {
+                server: serverMid,
+                recursive: "0",
+                local_mode: "local_files",
+                local_path: config.warPath,
+                exist_mode_local: "skip",
+                rel_path: "file_only",
+                remote_path: remotePath,
+                exist_mode: "reship",
+                backup_mode: "none",
+                rollback_mode: "none",
+                track_mode: "none",
+                audit_tracked: "none",
+                chown: "",
+                chmod: "",
+                max_transfer_chunk_size: "",
+                copy_attrs: "0"
+            }
+        });
+
         var BASE_URL = tomcatInstance.url ;
 
         if ( tomcatInstance.port ) {
@@ -33,7 +67,7 @@ reg.register('service.tomcat.deploy', {
         var deployUrl = BASE_URL + "/manager/text/deploy?";
 
         deployUrl += "path=" + config.appPath;
-        deployUrl += "&war=" + config.warPath;
+        deployUrl += "&war=" + remoteWarPath;
         deployUrl += "&update=" + update;
 
         var agent = web.agent({

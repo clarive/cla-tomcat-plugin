@@ -7,6 +7,11 @@ ci.createClass("TomcatInstance", {
     icon: '/plugin/cla-tomcat-plugin/icon/tomcat.svg',
     roles: ["Tomcat"],
     has: {
+        server: {
+            is: "rw",
+            isa: "ArrayRef",
+            required: true
+        },
         url: {
             is: "rw",
             isa: "Str",
