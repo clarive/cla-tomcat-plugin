@@ -26,12 +26,12 @@ reg.register('service.tomcat.deploy', {
             log.fatal("Server CI doesn't exist");
         }
 
-        var serverMid = tomcatInstance.server;
+        var serverMid = tomcatInstance.server[0];
 
         var server = ci.findOne({
             mid: serverMid + ''
         });
-log.warn(server);
+
         var remotePath = server.remote_temp || "/tmp";
 
         var remoteWarPath = path.join(remotePath, path.basename(config.warPath));
@@ -92,6 +92,7 @@ log.warn(server);
             log.fatal(message);
         } else {
             log.info(message);
+            log.info('Application deployed <a target="_blank" href="' + BASE_URL + config.appPath + '">here</a>');
         }
 
         return message;
