@@ -32,7 +32,7 @@ reg.register('service.tomcat.deploy', {
             mid: serverMid + ''
         });
 
-        var remotePath = server.remote_temp || "/tmp";
+        var remotePath = "/tmp";
 
         var remoteWarPath = path.join(remotePath, path.basename(config.warPath));
 
