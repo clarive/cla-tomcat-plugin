@@ -49,7 +49,7 @@ reg.register('service.tomcat.deploy', {
                 exist_mode: "reship",
                 backup_mode: "none",
                 rollback_mode: "none",
-                track_mode: "none",
+                track_mode: "track",
                 audit_tracked: "none",
                 chown: "",
                 chmod: "",
