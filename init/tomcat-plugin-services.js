@@ -92,7 +92,7 @@ reg.register('service.tomcat.deploy', {
             log.fatal(message);
         } else {
             log.info(message);
-            log.info('Application deployed <a target="_blank" href="' + BASE_URL + config.appPath + '">here</a>');
+            log.info('Application deployed in <a target="_blank" href="' + BASE_URL + config.appPath + '">' + BASE_URL + config.appPath + '</a>');
         }
 
         return message;
