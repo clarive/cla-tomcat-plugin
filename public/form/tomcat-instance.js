@@ -10,12 +10,12 @@
         }),
         Cla.ui.textField({
             name: 'url',
-            fieldLabel: 'Server URL',
+            fieldLabel: _('Server URL'),
             allowBlank: false
         }),
         Cla.ui.numberField({
             name: 'port',
-            fieldLabel: 'Port',
+            fieldLabel: _('Port'),
             allowBlank: true,
             maxValue: '99999',
             type: 'int',
@@ -23,12 +23,12 @@
         }),
         Cla.ui.textField({
             name: 'userName',
-            fieldLabel: 'Username',
+            fieldLabel: _('Username'),
             allowBlank: false
         }),
         Cla.ui.textField({
             name: 'password',
-            fieldLabel: 'Password',
+            fieldLabel: _('Password'),
             inputType:'password',
             allowBlank: false
         })

@@ -12,21 +12,21 @@
 
     var warPath = Cla.ui.textField({
         name: 'warPath',
-        fieldLabel: 'WAR file path',
+        fieldLabel: _('WAR file path'),
         value: params.data.warPath || '',
         allowBlank: false
     });
 
     var appPath = Cla.ui.textField({
         name: 'appPath',
-        fieldLabel: 'Application path',
+        fieldLabel: _('Application path'),
         value: params.data.appPath || '',
         allowBlank: false
     });
 
     var update = Cla.ui.checkBox({
         name: 'update',
-        fieldLabel: 'Force update?',
+        fieldLabel: _('Force update?'),
         checked: params.data.update || false,
     });
 

@@ -1,0 +1,43 @@
+#: init/tomcat-plugin-services.js
+msgid "Deploy WAR to Tomcat"
+msgstr "Desplegar WAR a Tomcat"
+
+#: init/tomcat-plugin-services.js
+msgid "Application deployed in"
+msgstr "Aplicación desplegada en"
+
+#: public/form/tomcat-deploy.js
+msgid "Instance"
+msgstr "Instancia"
+
+#: public/form/tomcat-deploy.js
+msgid "WAR file path"
+msgstr "Ruta del fichero WAR"
+
+#: public/form/tomcat-deploy.js
+msgid "Application path"
+msgstr "Ruta de la aplicación"
+
+#: public/form/tomcat-deploy.js
+msgid "Force update?"
+msgstr "Forzar actualización?"
+
+#: public/form/tomcat-instance.js
+msgid "Server"
+msgstr "Servidor"
+
+#: public/form/tomcat-instance.js
+msgid "Server URL"
+msgstr "URL del Servidor"
+
+#: public/form/tomcat-instance.js
+msgid "Port"
+msgstr "Puerto"
+
+#: public/form/tomcat-instance.js
+msgid "Username"
+msgstr "Usuario"
+
+#: public/form/tomcat-instance.js
+msgid "Password"
+msgstr "Contraseña"

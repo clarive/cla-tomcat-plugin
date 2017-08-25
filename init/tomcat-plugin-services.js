@@ -1,7 +1,7 @@
 var reg = require("cla/reg");
 
 reg.register('service.tomcat.deploy', {
-    name: 'Deploy WAR to Tomcat',
+    name: _('Deploy WAR to Tomcat'),
     icon: '/plugin/cla-tomcat-plugin/icon/tomcat.svg',
     form: '/plugin/cla-tomcat-plugin/form/tomcat-deploy.js',
 
@@ -92,7 +92,7 @@ reg.register('service.tomcat.deploy', {
             log.fatal(message);
         } else {
             log.info(message);
-            log.info('Application deployed in <a target="_blank" href="' + BASE_URL + config.appPath + '">' + BASE_URL + config.appPath + '</a>');
+            log.info(_('Application deployed in') +' <a target="_blank" href="' + BASE_URL + config.appPath + '">' + BASE_URL + config.appPath + '</a>');
         }
 
         return message;
