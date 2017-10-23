@@ -1,7 +1,7 @@
 name: Clarive Tomcat Plugin
 description: Tomcat Plugin is designed to be able to deploy J2EE application WAR files in Tomcat webservers.
 version: 1.0
-icon: https://github.com/clarive/cla-tomcat-plugin/public/icon/tomcat.svg
+icon: https://cdn.rawgit.com/clarive/cla-tomcat-plugin/master/public/icon/tomcat.svg?sanitize=true
 url: https://github.com/clarive/cla-tomcat-plugin
 requires:
   - clarive_version: 6.8 <= version
