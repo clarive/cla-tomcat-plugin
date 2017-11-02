@@ -4,7 +4,24 @@ reg.register('service.tomcat.deploy', {
     name: _('Deploy WAR to Tomcat'),
     icon: '/plugin/cla-tomcat-plugin/icon/tomcat.svg',
     form: '/plugin/cla-tomcat-plugin/form/tomcat-deploy.js',
-
+    rulebook: {
+        moniker: 'tomcat_deploy',
+        description: _('Deploys Tomcat WAR file'),
+        required: ['instance', 'war_path', 'app_path'],
+        allow: ['instance', 'war_path', 'app_path', 'update'],
+        mapper: {
+            'war_path': 'warPath',
+            'app_path': 'appPath'
+        },
+        examples: [{
+            tomcat_deploy: {
+                instance: 'tomcat_instance',
+                war_path: '/deploys/tomcat.war',
+                app_path: "/apps/tomcat_app/",
+                update: "0"
+            }
+        }]
+    },
     handler: function(ctx, config) {
 
         var regRemote = require("cla/reg");
@@ -15,7 +32,6 @@ reg.register('service.tomcat.deploy', {
         var path = require("cla/path");
 
         var update = config.update == '1' ? 'true' : 'false';
-        var timeout = config.timeout || 10;
         var message = '';
 
         var tomcatInstance = ci.findOne({

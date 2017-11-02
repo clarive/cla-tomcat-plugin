@@ -5,7 +5,7 @@ ci.createRole("Tomcat");
 ci.createClass("TomcatInstance", {
     form: '/plugin/cla-tomcat-plugin/form/tomcat-instance.js',
     icon: '/plugin/cla-tomcat-plugin/icon/tomcat.svg',
-    roles: ["Tomcat"],
+    roles: ["Tomcat", "ClariveSE"],
     has: {
         server: {
             is: "rw",
