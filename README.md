@@ -1,7 +1,7 @@
 
 # Tomcat Plugin
 
-<img src="https://cdn.rawgit.com/clarive/cla-tomcat-plugin/master/public/icon/tomcat.svg?sanitize=true" alt="Tomcat Plugin" title="Tomcat Plugin" width="120" height="120">
+<img src="https://cdn.jsdelivr.net/gh/clarive/cla-tomcat-plugin/public/icon/tomcat.svg?sanitize=true" alt="Tomcat Plugin" title="Tomcat Plugin" width="120" height="120">
 
 Tomcat Plugin is designed to be able to deploy J2EE application WAR files in Tomcat webservers.
 
